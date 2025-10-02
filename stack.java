@@ -31,9 +31,38 @@ public class stack{
             return false;
         }
     }
+
+    public static boolean duplicate_parentheses(String str){
+        Stack<Character>s=new Stack<>();
+        //iterate
+        for(int i=0;i<str.length();i++){
+            char ch=str.charAt(i);
+
+            if(ch!=')'){         //push evrything except ')'
+                s.push(ch);
+            }
+                
+            else{    //handle closing parenthesis
+                int count=0;
+                while(s.peek()!='('){   //pop until we get '('
+                    s.pop();
+                    count++;
+                }
+                if(count<1){
+                    return true; //duplicate
+                }
+                else{
+                    s.pop();  //pop the () as we have to check next
+                }
+        }
+    }
+        return false;  //no duplicate found
+    }
     public static void main(String args[]){
-        String str="({})[]";
-        System.out.print(valid_parenthesis(str));
+        //String str="({})[]";
+        //System.out.print(valid_parenthesis(str));
+        String str="(a+b)";
+        System.out.print(duplicate_parentheses(str));
     }
 }
 
