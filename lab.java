@@ -97,11 +97,8 @@ public class lab {
     public static void square_pattern(int n){
         for(int i=0;i<=n;i++){
             for(int j=0;j<=n;j++){
-                if(i==0 || i==n){
+                if(i==0 || i==n || j==0 || j==n){
                 System.out.print("*");
-                }
-                else if(j==0 || j==n){
-                    System.out.print("*");
                 }
                 else{
                     System.out.print(" ");
