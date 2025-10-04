@@ -100,6 +100,9 @@ public class lab {
                 if(i==0 || i==n || j==0 || j==n){
                 System.out.print("*");
                 }
+                else if(i==j && i==(n+1)/2){
+                    System.out.print("*");
+                }
                 else{
                     System.out.print(" ");
                 }
@@ -108,8 +111,8 @@ public class lab {
         }
     }
     public static void main(String args[]) {
-        //Scanner sc = new Scanner(System.in);
-            //int s = sc.nextInt();
+        Scanner sc = new Scanner(System.in);
+            int num = sc.nextInt();
             /*for(int i=2;i<=n;i++){
                 if(prime(i)==true){r
                     System.out.println(i+"");
@@ -128,6 +131,6 @@ public class lab {
             }*/
             //count_nums(6854);
             //Armstrong(370);
-            square_pattern(6);
+            square_pattern(num);
     }
 }
