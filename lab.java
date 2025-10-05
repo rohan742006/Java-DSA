@@ -111,8 +111,8 @@ public class lab {
         }
     }
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-            int num = sc.nextInt();
+        Scanner sc=new Scanner(System.in);
+            int num=sc.nextInt();
             /*for(int i=2;i<=n;i++){
                 if(prime(i)==true){r
                     System.out.println(i+"");
