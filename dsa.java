@@ -38,7 +38,7 @@ public class dsa {
             curr=next;
         }
 
-        //compare bot halves
+        //compare both halves
         Node left=head;
         Node right=prev;
 
@@ -52,6 +52,31 @@ public class dsa {
         return true;
     }
 
+    public static String simplifypath(String path){
+        //rules: absolute path always starts with /
+        //. current directory
+        //.. go to parent directory
+        // treat it as single /
+        Stack<String>stack=new Stack<>();
+        String parts[]=path.split("/");  //each thing is splitted
+        for(int i=0;i<parts.length;i++){
+            String part=parts[i];
+
+            if(part.equals("")||part.equals(".")){
+                continue;  //move to next
+            }
+
+            else if(part.equals("..")){
+                if(!stack.isEmpty()){
+                    stack.pop();   //remove last added directory
+                }
+            }
+            else{
+                stack.push(part);
+            }
+        }
+        return "/"+String.join("/",stack);
+    }
     public static Node mid(Node head){
         Node slow=head;
         Node fast=head.next;
@@ -63,7 +88,7 @@ public class dsa {
         return slow.next;
     }
     public static void main(String args[]){
-        addlast('a');
+        /*addlast('a');
         addlast('b');
         addlast('b');
         addlast('a');
@@ -72,6 +97,8 @@ public class dsa {
         }
         else{
             System.out.print("List is not Plaindrome");
-        }
+        }*/
+
+        System.out.print(simplifypath("/apnacollege/"));
     }
 }
