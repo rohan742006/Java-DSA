@@ -14,7 +14,7 @@ public class coding {
     public static String reverse(String str) {
         Stack<Character> s = new Stack<>();
         //push each element in stack
-        for (int i = 0; i < str.length(); i++) {
+        for (int i = 0; i< str.length(); i++) {
             s.push(str.charAt(i));
         }
 
