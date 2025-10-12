@@ -122,6 +122,6 @@ public class doubly {
         System.out.println("reversed doubly list: ");
         ll.reverse();
         ll.print();
-        System.out.print("Size of doubly linked list is:"+ll.size);
+        System.out.print("Size of doubly linked list is: "+ll.size);
     }
 }
